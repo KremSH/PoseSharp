@@ -1,0 +1,11 @@
+C:\Users\Kareem\source\repos\Picture\Picture\bin\Debug\Picture.exe.config
+C:\Users\Kareem\source\repos\Picture\Picture\bin\Debug\Picture.exe
+C:\Users\Kareem\source\repos\Picture\Picture\bin\Debug\Picture.pdb
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.csproj.AssemblyReference.cache
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.MainMenu.resources
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.SlideShow.resources
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.Properties.Resources.resources
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.csproj.GenerateResource.cache
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.csproj.CoreCompileInputs.cache
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.exe
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.pdb
