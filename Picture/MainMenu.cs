@@ -16,12 +16,12 @@ namespace Picture
         public MainMenu()
         {
             InitializeComponent();
-            Form slideshow = new SlideShow();
-    
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //folder browser and label displaying selected path
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 label2.Visible = true;
@@ -31,6 +31,7 @@ namespace Picture
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //open slideshow form and start
             Form slideshow = new SlideShow();
             slideshow.ShowDialog(this);
         }
