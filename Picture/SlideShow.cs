@@ -13,15 +13,15 @@ namespace Picture
 {
     public partial class SlideShow : Form
     {
-        Timer slideTimer;
-        int interval = 10000;
+        
+        int interval = 30000;
         public MainMenu menu = (MainMenu)Application.OpenForms["MainMenu"];
         //Image img = Image.FromFile("C:\\Users\\Kareem\\Desktop\\Art pics and pdfs\\Female Character Pinup\\Female Character Pinup\\æÑßß¿n íÑº ¡áºóá¡¿n3350.jpg");
         
         public SlideShow()
         {
             InitializeComponent();
-            slideTimer = new Timer();
+          
             if (menu.radioButton1.Checked) {
                 interval = 30000;
             }
@@ -37,19 +37,26 @@ namespace Picture
             {
                 interval = 600000;
             }
-            slideTimer.Interval = interval;
-            //this.pictureBox1.Image = img;
-           
+            timer1.Interval = interval;
+            timer1.Start();
+       
         }
         
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+            timer1.Stop();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
+            timer1.Start();
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Console.WriteLine("test");
         }
     }
 }
