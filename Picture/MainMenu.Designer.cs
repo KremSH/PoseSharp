@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.pictureFolderDialogue = new System.Windows.Forms.FolderBrowserDialog();
             this.folderDialogue = new System.Windows.Forms.Button();
             this.thirtySec = new System.Windows.Forms.RadioButton();
             this.oneMin = new System.Windows.Forms.RadioButton();
             this.fiveMin = new System.Windows.Forms.RadioButton();
             this.tenMin = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.timeLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.folderName = new System.Windows.Forms.Label();
+            this.timeRadioButtonsPanel = new System.Windows.Forms.Panel();
+            this.timeRadioButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderDialogue
@@ -50,7 +50,7 @@
             this.folderDialogue.TabIndex = 0;
             this.folderDialogue.Text = "Choose Folder";
             this.folderDialogue.UseVisualStyleBackColor = true;
-            this.folderDialogue.Click += new System.EventHandler(this.button1_Click);
+            this.folderDialogue.Click += new System.EventHandler(this.dialogue_Click);
             // 
             // thirtySec
             // 
@@ -96,15 +96,15 @@
             this.tenMin.Text = "10m";
             this.tenMin.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // timeLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Time:";
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLabel.Location = new System.Drawing.Point(62, 198);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(48, 17);
+            this.timeLabel.TabIndex = 5;
+            this.timeLabel.Text = "Time:";
             // 
             // startButton
             // 
@@ -115,43 +115,43 @@
             this.startButton.TabIndex = 6;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
-            this.startButton.Click += new System.EventHandler(this.button2_Click);
+            this.startButton.Click += new System.EventHandler(this.start_Click);
             // 
-            // label2
+            // folderName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(230, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
-            this.label2.Visible = false;
+            this.folderName.AutoSize = true;
+            this.folderName.Location = new System.Drawing.Point(230, 156);
+            this.folderName.Name = "folderName";
+            this.folderName.Size = new System.Drawing.Size(61, 13);
+            this.folderName.TabIndex = 7;
+            this.folderName.Text = "folderName";
+            this.folderName.Visible = false;
             // 
-            // panel1
+            // timeRadioButtonsPanel
             // 
-            this.panel1.Controls.Add(this.thirtySec);
-            this.panel1.Controls.Add(this.oneMin);
-            this.panel1.Controls.Add(this.fiveMin);
-            this.panel1.Controls.Add(this.tenMin);
-            this.panel1.Location = new System.Drawing.Point(65, 235);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 42);
-            this.panel1.TabIndex = 8;
+            this.timeRadioButtonsPanel.Controls.Add(this.thirtySec);
+            this.timeRadioButtonsPanel.Controls.Add(this.oneMin);
+            this.timeRadioButtonsPanel.Controls.Add(this.fiveMin);
+            this.timeRadioButtonsPanel.Controls.Add(this.tenMin);
+            this.timeRadioButtonsPanel.Location = new System.Drawing.Point(65, 235);
+            this.timeRadioButtonsPanel.Name = "timeRadioButtonsPanel";
+            this.timeRadioButtonsPanel.Size = new System.Drawing.Size(441, 42);
+            this.timeRadioButtonsPanel.TabIndex = 8;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 444);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.timeRadioButtonsPanel);
+            this.Controls.Add(this.folderName);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.folderDialogue);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.timeRadioButtonsPanel.ResumeLayout(false);
+            this.timeRadioButtonsPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,14 +159,14 @@
 
         #endregion
         private System.Windows.Forms.Button folderDialogue;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel timeRadioButtonsPanel;
         public System.Windows.Forms.RadioButton thirtySec;
         public System.Windows.Forms.RadioButton oneMin;
         public System.Windows.Forms.RadioButton fiveMin;
         public System.Windows.Forms.RadioButton tenMin;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        public System.Windows.Forms.Label folderName;
+        public System.Windows.Forms.FolderBrowserDialog pictureFolderDialogue;
     }
 }

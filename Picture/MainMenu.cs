@@ -19,17 +19,17 @@ namespace Picture
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dialogue_Click(object sender, EventArgs e)
         {
             //folder browser and label displaying selected path
-            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            if (pictureFolderDialogue.ShowDialog() == DialogResult.OK)
             {
-                label2.Visible = true;
-                label2.Text = Path.GetFileName(folderBrowserDialog1.SelectedPath);
+                folderName.Visible = true;
+                folderName.Text = Path.GetFileName(pictureFolderDialogue.SelectedPath);
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void start_Click(object sender, EventArgs e)
         {
             //open slideshow form and start
             Form slideshow = new SlideShow();

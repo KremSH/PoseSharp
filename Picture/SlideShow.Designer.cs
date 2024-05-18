@@ -33,7 +33,7 @@
             this.skipButton = new System.Windows.Forms.Button();
             this.endButton = new System.Windows.Forms.Button();
             this.timeLeft = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gestures)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.skipButton.TabIndex = 1;
             this.skipButton.Text = "Skip";
             this.skipButton.UseVisualStyleBackColor = true;
-            this.skipButton.Click += new System.EventHandler(this.button1_Click);
+            this.skipButton.Click += new System.EventHandler(this.skip_Click);
             // 
             // endButton
             // 
@@ -65,7 +65,7 @@
             this.endButton.TabIndex = 2;
             this.endButton.Text = "End Session";
             this.endButton.UseVisualStyleBackColor = true;
-            this.endButton.Click += new System.EventHandler(this.button2_Click);
+            this.endButton.Click += new System.EventHandler(this.end_Click);
             // 
             // timeLeft
             // 
@@ -73,14 +73,14 @@
             this.timeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timeLeft.Location = new System.Drawing.Point(645, 320);
             this.timeLeft.Name = "timeLeft";
-            this.timeLeft.Size = new System.Drawing.Size(70, 25);
+            this.timeLeft.Size = new System.Drawing.Size(88, 25);
             this.timeLeft.TabIndex = 3;
-            this.timeLeft.Text = "label1";
+            this.timeLeft.Text = "timeLeft";
             // 
-            // timer1
+            // pictureTimer
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.pictureTimer.Enabled = true;
+            this.pictureTimer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // SlideShow
             // 
@@ -104,7 +104,7 @@
         private System.Windows.Forms.Button skipButton;
         private System.Windows.Forms.Button endButton;
         private System.Windows.Forms.Label timeLeft;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer pictureTimer;
     }
 }
 
