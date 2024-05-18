@@ -29,72 +29,72 @@
         private void InitializeComponent()
         {
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.folderDialogue = new System.Windows.Forms.Button();
+            this.thirtySec = new System.Windows.Forms.RadioButton();
+            this.oneMin = new System.Windows.Forms.RadioButton();
+            this.fiveMin = new System.Windows.Forms.RadioButton();
+            this.tenMin = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.startButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // folderDialogue
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(230, 113);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Choose Folder";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.folderDialogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.folderDialogue.Location = new System.Drawing.Point(230, 113);
+            this.folderDialogue.Name = "folderDialogue";
+            this.folderDialogue.Size = new System.Drawing.Size(114, 36);
+            this.folderDialogue.TabIndex = 0;
+            this.folderDialogue.Text = "Choose Folder";
+            this.folderDialogue.UseVisualStyleBackColor = true;
+            this.folderDialogue.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton1
+            // thirtySec
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(10, 12);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "30s";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.thirtySec.AutoSize = true;
+            this.thirtySec.Location = new System.Drawing.Point(10, 12);
+            this.thirtySec.Name = "thirtySec";
+            this.thirtySec.Size = new System.Drawing.Size(42, 17);
+            this.thirtySec.TabIndex = 1;
+            this.thirtySec.TabStop = true;
+            this.thirtySec.Text = "30s";
+            this.thirtySec.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // oneMin
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(127, 12);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "1m";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.oneMin.AutoSize = true;
+            this.oneMin.Location = new System.Drawing.Point(127, 12);
+            this.oneMin.Name = "oneMin";
+            this.oneMin.Size = new System.Drawing.Size(39, 17);
+            this.oneMin.TabIndex = 2;
+            this.oneMin.TabStop = true;
+            this.oneMin.Text = "1m";
+            this.oneMin.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // fiveMin
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(250, 12);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(39, 17);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "5m";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.fiveMin.AutoSize = true;
+            this.fiveMin.Location = new System.Drawing.Point(250, 12);
+            this.fiveMin.Name = "fiveMin";
+            this.fiveMin.Size = new System.Drawing.Size(39, 17);
+            this.fiveMin.TabIndex = 3;
+            this.fiveMin.TabStop = true;
+            this.fiveMin.Text = "5m";
+            this.fiveMin.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // tenMin
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(361, 12);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(45, 17);
-            this.radioButton4.TabIndex = 4;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "10m";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.tenMin.AutoSize = true;
+            this.tenMin.Location = new System.Drawing.Point(361, 12);
+            this.tenMin.Name = "tenMin";
+            this.tenMin.Size = new System.Drawing.Size(45, 17);
+            this.tenMin.TabIndex = 4;
+            this.tenMin.TabStop = true;
+            this.tenMin.Text = "10m";
+            this.tenMin.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -106,16 +106,16 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Time:";
             // 
-            // button2
+            // startButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(230, 305);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 36);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.Location = new System.Drawing.Point(230, 305);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(114, 36);
+            this.startButton.TabIndex = 6;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -129,10 +129,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton4);
+            this.panel1.Controls.Add(this.thirtySec);
+            this.panel1.Controls.Add(this.oneMin);
+            this.panel1.Controls.Add(this.fiveMin);
+            this.panel1.Controls.Add(this.tenMin);
             this.panel1.Location = new System.Drawing.Point(65, 235);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(441, 42);
@@ -145,9 +145,9 @@
             this.ClientSize = new System.Drawing.Size(581, 444);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.startButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.folderDialogue);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
             this.panel1.ResumeLayout(false);
@@ -158,14 +158,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button folderDialogue;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.RadioButton radioButton1;
-        public System.Windows.Forms.RadioButton radioButton2;
-        public System.Windows.Forms.RadioButton radioButton3;
-        public System.Windows.Forms.RadioButton radioButton4;
+        public System.Windows.Forms.RadioButton thirtySec;
+        public System.Windows.Forms.RadioButton oneMin;
+        public System.Windows.Forms.RadioButton fiveMin;
+        public System.Windows.Forms.RadioButton tenMin;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }

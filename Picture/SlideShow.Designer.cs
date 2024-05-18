@@ -29,60 +29,53 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.gestures = new System.Windows.Forms.PictureBox();
+            this.skipButton = new System.Windows.Forms.Button();
+            this.endButton = new System.Windows.Forms.Button();
+            this.timeLeft = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestures)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // gestures
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(79, 48);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(547, 557);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.gestures.Location = new System.Drawing.Point(79, 48);
+            this.gestures.Name = "gestures";
+            this.gestures.Size = new System.Drawing.Size(547, 557);
+            this.gestures.TabIndex = 0;
+            this.gestures.TabStop = false;
             // 
-            // button1
+            // skipButton
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Location = new System.Drawing.Point(314, 630);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Skip";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.skipButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.skipButton.Location = new System.Drawing.Point(314, 630);
+            this.skipButton.Name = "skipButton";
+            this.skipButton.Size = new System.Drawing.Size(83, 35);
+            this.skipButton.TabIndex = 1;
+            this.skipButton.Text = "Skip";
+            this.skipButton.UseVisualStyleBackColor = true;
+            this.skipButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // endButton
             // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Location = new System.Drawing.Point(543, 630);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 29);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "End Session";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.endButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.endButton.Location = new System.Drawing.Point(543, 630);
+            this.endButton.Name = "endButton";
+            this.endButton.Size = new System.Drawing.Size(83, 29);
+            this.endButton.TabIndex = 2;
+            this.endButton.Text = "End Session";
+            this.endButton.UseVisualStyleBackColor = true;
+            this.endButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
+            // timeLeft
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(645, 320);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.timeLeft.AutoSize = true;
+            this.timeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLeft.Location = new System.Drawing.Point(645, 320);
+            this.timeLeft.Name = "timeLeft";
+            this.timeLeft.Size = new System.Drawing.Size(70, 25);
+            this.timeLeft.TabIndex = 3;
+            this.timeLeft.Text = "label1";
             // 
             // timer1
             // 
@@ -94,24 +87,23 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 714);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.timeLeft);
+            this.Controls.Add(this.endButton);
+            this.Controls.Add(this.skipButton);
+            this.Controls.Add(this.gestures);
             this.Name = "SlideShow";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gestures)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox gestures;
+        private System.Windows.Forms.Button skipButton;
+        private System.Windows.Forms.Button endButton;
+        private System.Windows.Forms.Label timeLeft;
         private System.Windows.Forms.Timer timer1;
     }
 }

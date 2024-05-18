@@ -16,6 +16,8 @@ namespace Picture
         public MainMenu()
         {
             InitializeComponent();
+            Form slideshow = new SlideShow();
+    
         }
 
         private void button1_Click(object sender, EventArgs e)

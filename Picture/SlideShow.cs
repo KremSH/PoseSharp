@@ -16,7 +16,7 @@ namespace Picture
     {
         int i = 1;
         int timeElapsed = 0;
-        int interval = 5000;
+        int interval = 30000;
         List<string> images = new List<string> { };
         public MainMenu menu = (MainMenu)Application.OpenForms["MainMenu"];
         //Image img = Image.FromFile("C:\\Users\\Kareem\\Desktop\\Art pics and pdfs\\Female Character Pinup\\Female Character Pinup\\æÑßß¿n íÑº ¡áºóá¡¿n3350.jpg");
@@ -25,18 +25,18 @@ namespace Picture
         {
             InitializeComponent();
           
-            if (menu.radioButton1.Checked) {
+            if (menu.thirtySec.Checked) {
                 interval = 30000;
             }
-            if (menu.radioButton2.Checked)
+            if (menu.oneMin.Checked)
             {
                 interval = 60000;
             }
-            if (menu.radioButton3.Checked)
+            if (menu.fiveMin.Checked)
             {
                 interval = 300000;
             }
-            if (menu.radioButton4.Checked)
+            if (menu.tenMin.Checked)
             {
                 interval = 600000;
             }
@@ -45,9 +45,9 @@ namespace Picture
             foreach (string image in Directory.GetFiles(menu.folderBrowserDialog1.SelectedPath)){
                 images.Add(image);
             }
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.Image = Image.FromFile(images[0]);
-            label1.Text = timer1.Interval.ToString();
+            gestures.SizeMode = PictureBoxSizeMode.Zoom;
+            gestures.Image = Image.FromFile(images[0]);
+            timeLeft.Text = timer1.Interval.ToString();
 
         }
         
@@ -60,7 +60,7 @@ namespace Picture
         private void button1_Click(object sender, EventArgs e)
         {
             i++;
-            pictureBox1.Image = Image.FromFile(images[i]);
+            gestures.Image = Image.FromFile(images[i]);
             i++;
             timer1.Stop();
             timer1.Start();
@@ -69,16 +69,16 @@ namespace Picture
         private void timer1_Tick(object sender, EventArgs e)
         {
             timeElapsed = timer1.Interval / 1000;
-            label1.Text = timeElapsed.ToString();
+            timeLeft.Text = timeElapsed.ToString();
             if (i == images.Count)
             {
                 timer1.Stop();
-                pictureBox1.Image = null;
+                gestures.Image = null;
 
             }
             else
             {
-                pictureBox1.Image = Image.FromFile(images[i]);
+                gestures.Image = Image.FromFile(images[i]);
                 i++;
             }
         }
