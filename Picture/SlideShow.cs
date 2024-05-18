@@ -8,13 +8,16 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Picture
 {
     public partial class SlideShow : Form
     {
-        
-        int interval = 30000;
+        int i = 1;
+        int timeElapsed = 0;
+        int interval = 5000;
+        List<string> images = new List<string> { };
         public MainMenu menu = (MainMenu)Application.OpenForms["MainMenu"];
         //Image img = Image.FromFile("C:\\Users\\Kareem\\Desktop\\Art pics and pdfs\\Female Character Pinup\\Female Character Pinup\\æÑßß¿n íÑº ¡áºóá¡¿n3350.jpg");
         
@@ -39,7 +42,13 @@ namespace Picture
             }
             timer1.Interval = interval;
             timer1.Start();
-       
+            foreach (string image in Directory.GetFiles(menu.folderBrowserDialog1.SelectedPath)){
+                images.Add(image);
+            }
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Image = Image.FromFile(images[0]);
+            label1.Text = timer1.Interval.ToString();
+
         }
         
         private void button2_Click(object sender, EventArgs e)
@@ -50,13 +59,28 @@ namespace Picture
 
         private void button1_Click(object sender, EventArgs e)
         {
+            i++;
+            pictureBox1.Image = Image.FromFile(images[i]);
+            i++;
             timer1.Stop();
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Console.WriteLine("test");
+            timeElapsed = timer1.Interval / 1000;
+            label1.Text = timeElapsed.ToString();
+            if (i == images.Count)
+            {
+                timer1.Stop();
+                pictureBox1.Image = null;
+
+            }
+            else
+            {
+                pictureBox1.Image = Image.FromFile(images[i]);
+                i++;
+            }
         }
     }
 }
