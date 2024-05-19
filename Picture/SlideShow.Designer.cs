@@ -34,6 +34,7 @@
             this.endButton = new System.Windows.Forms.Button();
             this.timeLeft = new System.Windows.Forms.Label();
             this.pictureTimer = new System.Windows.Forms.Timer(this.components);
+            this.timerTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gestures)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +83,11 @@
             this.pictureTimer.Enabled = true;
             this.pictureTimer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // timerTimer
+            // 
+            this.timerTimer.Interval = 1000;
+            this.timerTimer.Tick += new System.EventHandler(this.timerTimer_Tick);
+            // 
             // SlideShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +111,7 @@
         private System.Windows.Forms.Button endButton;
         private System.Windows.Forms.Label timeLeft;
         private System.Windows.Forms.Timer pictureTimer;
+        private System.Windows.Forms.Timer timerTimer;
     }
 }
 
