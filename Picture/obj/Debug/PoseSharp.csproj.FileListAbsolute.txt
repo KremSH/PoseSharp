@@ -1,0 +1,11 @@
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\PoseSharp.csproj.AssemblyReference.cache
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.MainMenu.resources
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\Picture.SlideShow.resources
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\PoseSharp.csproj.GenerateResource.cache
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\PoseSharp.csproj.CoreCompileInputs.cache
+C:\Users\Kareem\source\repos\Picture\Picture\bin\Debug\PoseSharp.exe.config
+C:\Users\Kareem\source\repos\Picture\Picture\bin\Debug\PoseSharp.exe
+C:\Users\Kareem\source\repos\Picture\Picture\bin\Debug\PoseSharp.pdb
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\PoseSharp.Properties.Resources.resources
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\PoseSharp.exe
+C:\Users\Kareem\source\repos\Picture\Picture\obj\Debug\PoseSharp.pdb
