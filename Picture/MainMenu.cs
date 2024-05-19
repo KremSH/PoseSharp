@@ -16,7 +16,7 @@ namespace Picture
         public MainMenu()
         {
             InitializeComponent();
-           
+            this.Text = "PoseSharp";
         }
 
         private void dialogue_Click(object sender, EventArgs e)
@@ -32,8 +32,15 @@ namespace Picture
         private void start_Click(object sender, EventArgs e)
         {
             //open slideshow form and start
-            Form slideshow = new SlideShow();
-            slideshow.ShowDialog(this);
+            if (pictureFolderDialogue.SelectedPath !="")
+            {
+                Form slideshow = new SlideShow();
+                slideshow.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("No folder selected", "Error");
+            }
         }
     }
 }
