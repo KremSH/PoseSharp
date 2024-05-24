@@ -20,7 +20,6 @@ namespace Picture
         int timeElapsed = 0;
         //timer interval variable
         int interval = 10000;
-        List<string> images = new List<string> { };
         public MainMenu menu = (MainMenu)Application.OpenForms["MainMenu"];
         
         public SlideShow()
@@ -46,18 +45,12 @@ namespace Picture
             pictureTimer.Interval = interval;
             pictureTimer.Start();
             timerTimer.Start();
-            //add image paths to list from selected path in browser dialog
-          
-           foreach (string image in Directory.GetFiles(menu.pictureFolderDialogue.SelectedPath))
-             {
-                 images.Add(image);
-             }
-
             
-       
             //scale images to picture box
             gestures.SizeMode = PictureBoxSizeMode.Zoom;
-            gestures.Image = Image.FromFile(images[imageTracker]);
+            //Console.WriteLine(menu.images.Count);
+            gestures.Image = Image.FromFile(menu.images[imageTracker]);
+            
             
             //timeElapsed variable and time left label initialized
             timeElapsed = pictureTimer.Interval / 1000;
@@ -70,11 +63,12 @@ namespace Picture
             this.Close();
             pictureTimer.Stop();
             timerTimer.Stop();
+            menu.images.Clear();
         }
         private void skip_Click(object sender, EventArgs e)
         {
             //Skip button, same failsafe used in timer
-            if (imageTracker == images.Count-1)
+            if (imageTracker == menu.images.Count-1)
             {
                 pictureTimer.Stop();
                 timerTimer.Stop();
@@ -84,7 +78,7 @@ namespace Picture
             else
             {
                 imageTracker++;
-                gestures.Image = Image.FromFile(images[imageTracker]);
+                gestures.Image = Image.FromFile(menu.images[imageTracker]);
                 pictureTimer.Stop();
                 pictureTimer.Start();
                 timerTimer.Stop();
@@ -98,7 +92,7 @@ namespace Picture
             //timeElapsed = pictureTimer.Interval / 1000;
             //timeLeft.Text = timeElapsed.ToString();
             //flip through images on the interval as long as the i variable has not exceeded the image count
-            if (imageTracker == images.Count-1)
+            if (imageTracker == menu.images.Count-1)
             {
                 pictureTimer.Stop();
                 timerTimer.Stop();
@@ -108,13 +102,15 @@ namespace Picture
            else 
             {
                 imageTracker++;
-                gestures.Image = Image.FromFile(images[imageTracker]);
+                gestures.Image = Image.FromFile(menu.images[imageTracker]);
             }
         }
         private void SlideShow_FormClosing(object sender, FormClosingEventArgs e)
         {
             pictureTimer.Stop();
             timerTimer.Stop();
+            menu.images.Clear();
+
         }
         //Seperate timer created to showcase the time left on each gesture
         private void timerTimer_Tick(object sender, EventArgs e)
@@ -127,7 +123,7 @@ namespace Picture
                 timeElapsed = pictureTimer.Interval/1000;
                 timeLeft.Text += timeElapsed.ToString();
             }
-            
+         
         }
     }
 }
