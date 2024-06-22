@@ -20,6 +20,7 @@ namespace Picture
         {
             InitializeComponent();
             this.Text = "PoseSharp";
+            
         }
 
         private void dialogue_Click(object sender, EventArgs e)
@@ -63,7 +64,25 @@ namespace Picture
             {
                 MessageBox.Show("No folder selected", "Error");
             }
-            
+            if (custom.Checked)
+            {
+                if(!int.TryParse(customBox.Text, out int value))
+                {
+                    MessageBox.Show("Please enter a valid value");
+                }
+            }
+        }
+
+        private void custom_CheckedChanged(object sender, EventArgs e)
+        {
+            if (custom.Checked)
+            {
+                customBox.Visible = true;
+            }
+            else
+            {
+                customBox.Visible = false;
+            }
         }
     }
 }

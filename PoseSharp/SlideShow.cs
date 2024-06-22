@@ -42,6 +42,11 @@ namespace Picture
             {
                 interval = 600000;
             }
+            if (menu.custom.Checked)
+            {
+                int.TryParse(menu.customBox.Text, out interval);
+                interval = interval * 1000;
+            }
             pictureTimer.Interval = interval;
             pictureTimer.Start();
             timerTimer.Start();

@@ -38,6 +38,8 @@
             this.startButton = new System.Windows.Forms.Button();
             this.folderName = new System.Windows.Forms.Label();
             this.timeRadioButtonsPanel = new System.Windows.Forms.Panel();
+            this.custom = new System.Windows.Forms.RadioButton();
+            this.customBox = new System.Windows.Forms.TextBox();
             this.timeRadioButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,20 +131,42 @@
             // 
             // timeRadioButtonsPanel
             // 
+            this.timeRadioButtonsPanel.Controls.Add(this.custom);
             this.timeRadioButtonsPanel.Controls.Add(this.thirtySec);
             this.timeRadioButtonsPanel.Controls.Add(this.oneMin);
             this.timeRadioButtonsPanel.Controls.Add(this.fiveMin);
             this.timeRadioButtonsPanel.Controls.Add(this.tenMin);
-            this.timeRadioButtonsPanel.Location = new System.Drawing.Point(65, 235);
+            this.timeRadioButtonsPanel.Location = new System.Drawing.Point(41, 232);
             this.timeRadioButtonsPanel.Name = "timeRadioButtonsPanel";
-            this.timeRadioButtonsPanel.Size = new System.Drawing.Size(441, 42);
+            this.timeRadioButtonsPanel.Size = new System.Drawing.Size(528, 42);
             this.timeRadioButtonsPanel.TabIndex = 8;
+            // 
+            // custom
+            // 
+            this.custom.AutoSize = true;
+            this.custom.Location = new System.Drawing.Point(459, 12);
+            this.custom.Name = "custom";
+            this.custom.Size = new System.Drawing.Size(60, 17);
+            this.custom.TabIndex = 5;
+            this.custom.TabStop = true;
+            this.custom.Text = "Custom";
+            this.custom.UseVisualStyleBackColor = true;
+            this.custom.CheckedChanged += new System.EventHandler(this.custom_CheckedChanged);
+            // 
+            // customBox
+            // 
+            this.customBox.Location = new System.Drawing.Point(469, 280);
+            this.customBox.Name = "customBox";
+            this.customBox.Size = new System.Drawing.Size(100, 20);
+            this.customBox.TabIndex = 9;
+            this.customBox.Visible = false;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 444);
+            this.Controls.Add(this.customBox);
             this.Controls.Add(this.timeRadioButtonsPanel);
             this.Controls.Add(this.folderName);
             this.Controls.Add(this.startButton);
@@ -168,5 +192,7 @@
         public System.Windows.Forms.RadioButton tenMin;
         public System.Windows.Forms.Label folderName;
         public System.Windows.Forms.FolderBrowserDialog pictureFolderDialogue;
+        public System.Windows.Forms.RadioButton custom;
+        public System.Windows.Forms.TextBox customBox;
     }
 }
