@@ -14,6 +14,7 @@ namespace Picture
 {
     public partial class SlideShow : Form
     {
+        
         //variable used to keep track of images in list
         int imageTracker = 0;
         //variable used to display time remaining on label 1
@@ -25,6 +26,7 @@ namespace Picture
         public SlideShow()
         {
             InitializeComponent();
+            this.Icon = PoseSharp.Properties.Resources.Icon1;
             this.Text = "PoseSharp";
             //setup interval according to main menu radio buttons
             if (menu.thirtySec.Checked) {

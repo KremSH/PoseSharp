@@ -19,6 +19,7 @@ namespace Picture
         public MainMenu()
         {
             InitializeComponent();
+            this.Icon = PoseSharp.Properties.Resources.Icon1;
             this.Text = "PoseSharp";
             
         }
@@ -75,6 +76,7 @@ namespace Picture
 
         private void custom_CheckedChanged(object sender, EventArgs e)
         {
+            //Only show the custom textbox when the radio button is checked
             if (custom.Checked)
             {
                 customBox.Visible = true;
