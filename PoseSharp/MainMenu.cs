@@ -52,26 +52,38 @@ namespace Picture
                 }
                 if (images.Count > 0)
                 {
-                    Form slideshow = new SlideShow();
-                    slideshow.ShowDialog(this);
+                    //Check if the custom time is checked and then checks if the value entered is an integer
+                    if (custom.Checked)
+                    {
+                        if (!int.TryParse(customBox.Text, out int value))
+                        {
+                            MessageBox.Show("Please enter a valid value");
+                        }
+                        else
+                        {
+                            Form slideshow = new SlideShow();
+                            slideshow.ShowDialog(this);
+                        }
+                    }
+                    //if the custom time rdio button is not checked then start the slideshow anyway
+                    else
+                    {
+                        Form slideshow = new SlideShow();
+                        slideshow.ShowDialog(this);
+                    }
                 }
                 else
                 {
                     MessageBox.Show("No images in folder", "Error");
 
                 }
+                
             }
             else
             {
                 MessageBox.Show("No folder selected", "Error");
             }
-            if (custom.Checked)
-            {
-                if(!int.TryParse(customBox.Text, out int value))
-                {
-                    MessageBox.Show("Please enter a valid value");
-                }
-            }
+            
         }
 
         private void custom_CheckedChanged(object sender, EventArgs e)
