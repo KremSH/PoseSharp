@@ -17,8 +17,10 @@ namespace Picture
         
         //variable used to keep track of images in list
         int imageTracker = 0;
-        //variable used to display time remaining on label 1
+        //variable used to display time remaining on minLabel and secLabel
         int timeElapsed = 0;
+        int timeElapsedMin = 0;
+        int timeElapsedSec = 0;
         //timer interval variable
         int interval = 10000;
         public MainMenu menu = (MainMenu)Application.OpenForms["MainMenu"];
@@ -55,14 +57,18 @@ namespace Picture
             
             //scale images to picture box
             gestures.SizeMode = PictureBoxSizeMode.Zoom;
-            //Console.WriteLine(menu.images.Count);
             gestures.Image = Image.FromFile(menu.images[imageTracker]);
             
             
             //timeElapsed variable and time left label initialized
             timeElapsed = pictureTimer.Interval / 1000;
-            timeLeft.Text = timeElapsed.ToString();
-
+            //timeElapsed used to create a minute and second variable to display a more clear timer
+            timeElapsedMin = timeElapsed / 60;
+            timeElapsedSec = timeElapsed%60;
+            minLabel.Text = timeElapsedMin.ToString("00");
+            secLabel.Text = timeElapsedSec.ToString("00");
+            
+            
         }
         private void end_Click(object sender, EventArgs e)
         {
@@ -80,7 +86,7 @@ namespace Picture
                 pictureTimer.Stop();
                 timerTimer.Stop();
                 gestures.Image = null;
-                timeLeft.Text = "Done!";
+                doneLabel.Text = "Done!";
             }
             else
             {
@@ -91,7 +97,10 @@ namespace Picture
                 timerTimer.Stop();
                 timerTimer.Start();
                 timeElapsed = pictureTimer.Interval/1000;
-                timeLeft.Text = timeElapsed.ToString();
+                timeElapsedMin = timeElapsed / 60;
+                timeElapsedSec = timeElapsed % 60;
+                minLabel.Text = timeElapsedMin.ToString("00");
+                secLabel.Text = timeElapsedSec.ToString("00");
             }
         }
         private void timer_Tick(object sender, EventArgs e)
@@ -104,7 +113,7 @@ namespace Picture
                 pictureTimer.Stop();
                 timerTimer.Stop();
                 gestures.Image = null;
-                timeLeft.Text = "Done!";
+                doneLabel.Text = "Done!";
             }
            else 
             {
@@ -123,12 +132,21 @@ namespace Picture
         private void timerTimer_Tick(object sender, EventArgs e)
         {
             timeElapsed--;
-            timeLeft.Text = timeElapsed.ToString();
+            timeElapsedMin = timeElapsed / 60;
+            timeElapsedSec = timeElapsed % 60;
+            minLabel.Text = timeElapsedMin.ToString("00");
+            secLabel.Text = timeElapsedSec.ToString("00");
             if(timeElapsed == 0)
             {
-                timeLeft.Text = "";
+                
                 timeElapsed = pictureTimer.Interval/1000;
-                timeLeft.Text += timeElapsed.ToString();
+                minLabel.Text = "";
+                secLabel.Text = "";
+                timeElapsedMin = timeElapsed / 60;
+                timeElapsedSec = timeElapsed % 60;
+                minLabel.Text = timeElapsedMin.ToString("00");
+                secLabel.Text = timeElapsedSec.ToString("00");
+                
             }
          
         }
