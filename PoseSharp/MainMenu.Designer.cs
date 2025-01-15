@@ -40,6 +40,7 @@
             this.timeRadioButtonsPanel = new System.Windows.Forms.Panel();
             this.custom = new System.Windows.Forms.RadioButton();
             this.customBox = new System.Windows.Forms.TextBox();
+            this.shuffleButton = new System.Windows.Forms.Button();
             this.timeRadioButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,11 +162,23 @@
             this.customBox.TabIndex = 9;
             this.customBox.Visible = false;
             // 
+            // shuffleButton
+            // 
+            this.shuffleButton.Location = new System.Drawing.Point(350, 120);
+            this.shuffleButton.Name = "shuffleButton";
+            this.shuffleButton.Size = new System.Drawing.Size(75, 23);
+            this.shuffleButton.TabIndex = 10;
+            this.shuffleButton.Text = "Shuffle";
+            this.shuffleButton.UseVisualStyleBackColor = true;
+            this.shuffleButton.Visible = false;
+            this.shuffleButton.Click += new System.EventHandler(this.shuffleButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 444);
+            this.Controls.Add(this.shuffleButton);
             this.Controls.Add(this.customBox);
             this.Controls.Add(this.timeRadioButtonsPanel);
             this.Controls.Add(this.folderName);
@@ -194,5 +207,6 @@
         public System.Windows.Forms.FolderBrowserDialog pictureFolderDialogue;
         public System.Windows.Forms.RadioButton custom;
         public System.Windows.Forms.TextBox customBox;
+        private System.Windows.Forms.Button shuffleButton;
     }
 }

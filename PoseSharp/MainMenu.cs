@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,15 +32,8 @@ namespace Picture
             {
                 folderName.Visible = true;
                 folderName.Text = Path.GetFileName(pictureFolderDialogue.SelectedPath);
+                shuffleButton.Visible = true;
             }
-        }
-
-        private void start_Click(object sender, EventArgs e)
-        {
-            
-            //open slideshow form and start
-            //add image paths to list from selected path in browser dialog
-            //Check if images are found in folder, otherwise alert the user
             if (pictureFolderDialogue.SelectedPath != "")
             {
                 foreach (string image in Directory.GetFiles(this.pictureFolderDialogue.SelectedPath))
@@ -49,7 +43,22 @@ namespace Picture
                     {
                         images.Add(image);
                     }
+       
                 }
+            }
+        }
+
+        private void start_Click(object sender, EventArgs e)
+        {
+
+            //open slideshow form and start
+            //add image paths to list from selected path in browser dialog
+            //Check if images are found in folder, otherwise alert the user
+            folderName.Visible = false;
+            shuffleButton.Visible = false;  
+            if (pictureFolderDialogue.SelectedPath != "")
+            {
+                
                 if (images.Count > 0)
                 {
                     //Check if the custom time is checked and then checks if the value entered is an integer
@@ -97,6 +106,26 @@ namespace Picture
             {
                 customBox.Visible = false;
             }
+        }
+        private static Random rng = new Random();
+
+        private void shuffleButton_Click(object sender, EventArgs e)
+        {
+            //Shuffled images using the Fisher-Yates shuffle , from: https://stackoverflow.com/questions/273313/randomize-a-listt
+            if (images.Count > 0)
+            {
+                int n = images.Count;
+                while (n > 1)
+                {
+                    
+                    n--;
+                    int k = rng.Next(n + 1);
+                    string value = images[k];
+                    images[k] = images[n];
+                    images[n] = value;
+                }
+            }
+            
         }
     }
 }
